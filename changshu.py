@@ -1,4 +1,6 @@
-from bottle import default_app, route, get, post, request, template
+from bottle import default_app, run, route, get, post, request, template
+
+import sqlite3
 
 @route('/')
 def hello_world():
@@ -31,5 +33,7 @@ def check_login(username, password):
     else:
         return False
 
-application = default_app()
-
+if __name__ == '__main__':
+    run()
+else:
+    application = default_app()
